@@ -5,7 +5,7 @@ import optparse
 import re
 
 
-def get_options():
+def get_options():          
     parser = optparse.OptionParser()
     parser.add_option("-i", "--interface", dest="interface", help="Interface to change its MAC Address")
     parser.add_option("-m", "--mac", dest="new_mac", help="New MAC Address")
