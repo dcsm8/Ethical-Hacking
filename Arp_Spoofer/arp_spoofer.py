@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+# sysctl -w net.ipv4.ip_forward=1
+# sysctl -w net.ipv4.ip_forward=0
+
 import scapy.all as scapy
 import time
 import sys
